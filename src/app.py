@@ -8,7 +8,9 @@ from src.router import router
 load_dotenv()
 
 origins = [
-    "*"
+    "https://d6jo3bhmz1u5k.cloudfront.net",
+    "https://localhost:5173",
+    "http://localhost:5173",
 ]
 
 

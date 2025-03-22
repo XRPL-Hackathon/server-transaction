@@ -72,12 +72,12 @@ class PaymentsService:
             return HTTPException(status_code=404, detail="파일 정보 없음")
         
         file_price = file_info["price"]
-        seller_id = file_info["uploader_id"]
+        seller_id = file_info["owner_id"]
         
         # 판매자의 지갑 주소 가져오기
         receiver_wallet_address = self.payments_repository.get_user_wallet(seller_id)
         if not receiver_wallet_address:
-            return HTTPException(status_cod=404, detail="판매자의 XRPL 지갑 없음")
+            return HTTPException(status_code=404, detail="판매자의 XRPL 지갑 없음")
         
         receiver_wallet_address = receiver_wallet_address["address"]
         
